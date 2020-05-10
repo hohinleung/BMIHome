@@ -1,0 +1,64 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/green"
+    tools:context=".MyBMIActivity">
+
+    <ImageView
+        android:id="@+id/imageView"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:minWidth="100dp"
+        android:minHeight="100dp"
+        android:background="@color/yellow"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.498"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.0"
+        app:srcCompat="@drawable/icons8_aed_48" />
+
+    <TextView
+        android:id="@+id/UserNametxt"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Your BMI"
+        android:textAlignment="center"
+        android:background="@color/yellow"
+        android:textSize="30sp"
+        android:textStyle="bold"
+        android:layout_below="@+id/imageView"
+        tools:layout_editor_absoluteX="43dp" />
+
+    <Button
+        android:id="@+id/logout"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="310dp"
+        android:layout_marginEnd="10dp"
+        android:text="logout"
+        android:layout_below="@+id/UserNametxt"/>
+
+    <Button
+        android:id="@+id/BMICal"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/UserNametxt"
+        android:layout_marginStart="210dp"
+        android:layout_marginEnd="10dp"
+        android:text="BMICal" />
+
+    <Button
+        android:id="@+id/MyBMI"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/UserNametxt"
+        android:layout_marginStart="110dp"
+        android:layout_marginEnd="10dp"
+        android:text="MY BMI" />
+
+</RelativeLayout>

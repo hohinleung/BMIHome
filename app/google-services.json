@@ -1,0 +1,48 @@
+{
+  "project_info": {
+    "project_number": "942018004685",
+    "firebase_url": "https://bmibase-d78da.firebaseio.com",
+    "project_id": "bmibase-d78da",
+    "storage_bucket": "bmibase-d78da.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:942018004685:android:da8a0faa6c018d03c1cb84",
+        "android_client_info": {
+          "package_name": "com.example.bmihome"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "942018004685-9scev2mlmrc1d5t9ris41l3s6mbl3g64.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.example.bmihome",
+            "certificate_hash": "1bb005a8767d47abc2fd475da5af0356a890ec5a"
+          }
+        },
+        {
+          "client_id": "942018004685-hg9bba959o61ekq6s81uf0s804btdthp.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDVMDAgJnxiwMV1TOI1YY3-QKvxe_gjvX4"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "942018004685-hg9bba959o61ekq6s81uf0s804btdthp.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
