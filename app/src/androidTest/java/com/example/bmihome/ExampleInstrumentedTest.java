@@ -7,6 +7,11 @@ import androidx.test.ext.junit.runners.AndroidJUnit4;
 
 import org.junit.Test;
 import org.junit.runner.RunWith;
+
+import java.text.SimpleDateFormat;
+import java.util.Calendar;
+import java.util.Date;
+
 import static org.junit.Assert.assertEquals;
 
 import static org.junit.Assert.*;
@@ -25,6 +30,28 @@ public class ExampleInstrumentedTest {
 
         assertEquals("com.example.bmihome", appContext.getPackageName());
 
+
+    }
+    @Test
+    public void CheckDate(){
+        Date currentTime = Calendar.getInstance().getTime();
+        SimpleDateFormat df = new SimpleDateFormat("dd-MMM-yyyy");
+        String formattedDate = df.format(currentTime);
+
+        assertEquals(String.valueOf(formattedDate),"11-May-2020");
+    }
+
+    @Test
+    public void CheckBMI(){
+        Double height,weight;
+        Double bmi;
+
+        height=170.0;
+        weight=50.0;
+
+        bmi = weight / ((height/100)*(height/100));
+
+        assertEquals(String.format("%.2f", bmi),"17.30");
 
     }
 

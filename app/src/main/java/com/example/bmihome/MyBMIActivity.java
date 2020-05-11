@@ -101,30 +101,6 @@ public class MyBMIActivity extends AppCompatActivity {
             @Override
             public void onClick(View v) {
 
-                reff = FirebaseDatabase.getInstance().getReference().child("User").child("old:"+uid);
-                reff.addValueEventListener(new ValueEventListener() {
-                    @Override
-                    public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
-
-                        if(dataSnapshot.exists()) {
-                            date = dataSnapshot.child("date").getValue().toString();
-                            bmi= dataSnapshot.child("bmi").getValue().toString();
-                            BMI.setText("Your BMI: " + bmi);
-                            Time.setText("Date: " + date);
-                        }
-                        else{
-                            BMI.setText("No data");
-                            Time.setText("No data");
-                        }
-
-                    }
-
-                    @Override
-                    public void onCancelled(@NonNull DatabaseError databaseError) {
-
-                    }
-                });
-
                 newreff = FirebaseDatabase.getInstance().getReference().child("User").child("new:"+uid);
                 newreff.addValueEventListener(new ValueEventListener() {
                     @Override
@@ -156,6 +132,29 @@ public class MyBMIActivity extends AppCompatActivity {
                     }
                 });
 
+                reff = FirebaseDatabase.getInstance().getReference().child("User").child("old:"+uid);
+                reff.addValueEventListener(new ValueEventListener() {
+                    @Override
+                    public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
+
+                        if(dataSnapshot.exists()) {
+                            date = dataSnapshot.child("date").getValue().toString();
+                            bmi= dataSnapshot.child("bmi").getValue().toString();
+                            BMI.setText("Your BMI: " + bmi);
+                            Time.setText("Date: " + date);
+                        }
+                        else{
+                            BMI.setText("No data");
+                            Time.setText("No data");
+                        }
+
+                    }
+
+                    @Override
+                    public void onCancelled(@NonNull DatabaseError databaseError) {
+
+                    }
+                });
             }
         });
 

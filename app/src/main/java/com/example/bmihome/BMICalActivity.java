@@ -38,7 +38,6 @@ public class BMICalActivity extends AppCompatActivity {
     String date,id,email,bmi;
     BMI sbmi;
     Double num,xmi;
-    long maxid=0;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -74,20 +73,6 @@ public class BMICalActivity extends AppCompatActivity {
 
         String name= UserNametxt.getText().toString().trim();
         reff = FirebaseDatabase.getInstance().getReference().child("User");
-
-        reff.addValueEventListener(new ValueEventListener() {
-            @Override
-            public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
-                if(dataSnapshot.exists()){
-                    maxid = (dataSnapshot.getChildrenCount());
-                }
-            }
-
-            @Override
-            public void onCancelled(@NonNull DatabaseError databaseError) {
-
-            }
-        });
 
         btnLogout.setOnClickListener(new View.OnClickListener() {
             @Override
