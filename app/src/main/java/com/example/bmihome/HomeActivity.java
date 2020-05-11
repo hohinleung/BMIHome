@@ -1,5 +1,5 @@
 package com.example.bmihome;
-
+//Auther:hohinleung
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.content.Intent;

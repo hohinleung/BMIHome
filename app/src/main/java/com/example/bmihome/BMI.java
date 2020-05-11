@@ -1,6 +1,5 @@
 package com.example.bmihome;
-
-import java.util.Date;
+//Auther:hohinleung
 
 public class BMI {
     private String id;
