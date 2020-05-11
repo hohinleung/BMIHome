@@ -112,12 +112,14 @@ public class MyBMIActivity extends AppCompatActivity {
                             NBMI.setText("Your BMI: "+Nbmi);
                             NTime.setText("Date: "+Ndate);
 
-                            xmi = Double.parseDouble(bmi);
-                            Nxmi = Double.parseDouble(Nbmi);
+                            if(bmi!=null) {
+                                xmi = Double.parseDouble(bmi);
+                                Nxmi = Double.parseDouble(Nbmi);
 
-                            result = (Nxmi/xmi)*100-100;
-                            String re = Double.toString(result);
-                            compare.setText("BMI change: "+re+"%");
+                                result = (Nxmi / xmi) * 100 - 100;
+                                String re = Double.toString(result);
+                                compare.setText("BMI change: " + re + "%");
+                            }
                         }
                         else{
                             NBMI.setText("No data");
