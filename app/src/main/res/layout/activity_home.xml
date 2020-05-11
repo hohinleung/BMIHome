@@ -36,29 +36,23 @@
 
     <Button
         android:id="@+id/logout"
-        android:layout_width="wrap_content"
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_marginStart="310dp"
-        android:layout_marginEnd="10dp"
         android:text="@string/logoutst"
-        android:layout_below="@+id/UserNametxt"/>
+        android:layout_below="@+id/MyBMI"/>
 
     <Button
         android:id="@+id/BMICal"
-        android:layout_width="wrap_content"
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_below="@+id/UserNametxt"
-        android:layout_marginStart="210dp"
-        android:layout_marginEnd="10dp"
         android:text="@string/bmicalst" />
 
     <Button
         android:id="@+id/MyBMI"
-        android:layout_width="wrap_content"
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_below="@+id/UserNametxt"
-        android:layout_marginStart="110dp"
-        android:layout_marginEnd="10dp"
+        android:layout_below="@+id/BMICal"
         android:text="@string/mybmist" />
 
 </RelativeLayout>

@@ -143,32 +143,37 @@ public class BMICalActivity extends AppCompatActivity {
         btnUpload.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
+                //get new record to old record
                 oldreff = FirebaseDatabase.getInstance().getReference().child("User").child("new:"+uid);
-                getreff = FirebaseDatabase.getInstance().getReference().child("User");
                 oldreff.addValueEventListener(new ValueEventListener() {
                     @Override
                     public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
-                        id = dataSnapshot.child("id").getValue().toString();
-                        date = dataSnapshot.child("date").getValue().toString();
-                        email = dataSnapshot.child("email").getValue().toString();
-                        bmi= dataSnapshot.child("bmi").getValue().toString();
 
-                        xmi = Double.parseDouble(bmi);
+                        if(dataSnapshot.exists()) {
+                            id = dataSnapshot.child("id").getValue().toString();
+                            date = dataSnapshot.child("date").getValue().toString();
+                            email = dataSnapshot.child("email").getValue().toString();
+                            bmi = dataSnapshot.child("bmi").getValue().toString();
+                            xmi = Double.parseDouble(bmi);
+                        }
 
                     }
-
                     @Override
                     public void onCancelled(@NonNull DatabaseError databaseError) {
-
+                        Toast.makeText(BMICalActivity.this, "No data", Toast.LENGTH_SHORT).show();
                     }
                 });
+                //set old record
+                getreff = FirebaseDatabase.getInstance().getReference().child("User");
+                if((id!=null&&date!=null&&email!=null&&bmi!=null)) {
+                    sbmi.setId(id);
+                    sbmi.setBmi(xmi);
+                    sbmi.setEmail(email);
+                    sbmi.setDate(date);
+                    getreff.child(String.valueOf("old:" + uid)).setValue(sbmi);
+                }
 
-                sbmi.setId(id);
-                sbmi.setBmi(xmi);
-                sbmi.setEmail(email);
-                sbmi.setDate(date);
-                getreff.child(String.valueOf("old:"+uid)).setValue(sbmi);
-
+                //new record
                 reff = FirebaseDatabase.getInstance().getReference().child("User");
                 String semail = String.valueOf(UserNametxt.getText().toString().trim());
                 String sdate = formattedDate;

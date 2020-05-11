@@ -36,44 +36,49 @@
 
     <Button
         android:id="@+id/logout"
-        android:layout_width="wrap_content"
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_marginStart="310dp"
-        android:layout_marginEnd="10dp"
         android:text="@string/logoutst"
-        android:layout_below="@+id/UserNametxt"/>
+        android:layout_below="@+id/MyBMI"/>
 
     <Button
         android:id="@+id/BMICal"
-        android:layout_width="wrap_content"
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_below="@+id/UserNametxt"
-        android:layout_marginStart="210dp"
-        android:layout_marginEnd="10dp"
         android:text="@string/bmicalst" />
+
+    <Button
+        android:id="@+id/MyBMI"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/BMICal"
+        android:text="@string/mybmist" />
 
     <EditText
         android:id="@+id/Height"
-        android:layout_width="wrap_content"
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_centerInParent="true"
         android:hint="@string/heightst"
         android:inputType="number"
+        android:textAlignment="center"
         android:textSize="24sp" />
 
     <EditText
         android:id="@+id/Weight"
-        android:layout_width="wrap_content"
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_below="@+id/Height"
         android:layout_centerInParent="true"
         android:hint="@string/Weightst"
         android:inputType="number"
+        android:textAlignment="center"
         android:textSize="24sp" />
 
     <Button
         android:id="@+id/Cal"
-        android:layout_width="wrap_content"
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_centerInParent="true"
         android:layout_below="@+id/Weight"
@@ -92,29 +97,21 @@
 
     <TextView
         android:id="@+id/advice"
-        android:layout_width="wrap_content"
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_below="@+id/Resulttxt"
         android:layout_centerInParent="true"
-        android:textSize="32sp"
-        android:text="" />
+        android:text=""
+        android:textAlignment="center"
+        android:textSize="32sp" />
 
     <Button
         android:id="@+id/upload"
-        android:layout_width="wrap_content"
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_below="@+id/advice"
         android:layout_centerInParent="true"
         android:text="@string/uploadst" />
-
-    <Button
-        android:id="@+id/MyBMI"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_below="@+id/UserNametxt"
-        android:layout_marginStart="110dp"
-        android:layout_marginEnd="10dp"
-        android:text="@string/mybmist" />
 
 
 </RelativeLayout>

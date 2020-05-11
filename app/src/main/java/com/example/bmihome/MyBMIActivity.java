@@ -105,11 +105,17 @@ public class MyBMIActivity extends AppCompatActivity {
                 reff.addValueEventListener(new ValueEventListener() {
                     @Override
                     public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
-                        date = dataSnapshot.child("date").getValue().toString();
-                        bmi= dataSnapshot.child("bmi").getValue().toString();
 
-                        BMI.setText("Your BMI: "+bmi);
-                        Time.setText("Date: "+date);
+                        if(dataSnapshot.exists()) {
+                            date = dataSnapshot.child("date").getValue().toString();
+                            bmi= dataSnapshot.child("bmi").getValue().toString();
+                            BMI.setText("Your BMI: " + bmi);
+                            Time.setText("Date: " + date);
+                        }
+                        else{
+                            BMI.setText("No data");
+                            Time.setText("No data");
+                        }
 
                     }
 
@@ -123,18 +129,25 @@ public class MyBMIActivity extends AppCompatActivity {
                 newreff.addValueEventListener(new ValueEventListener() {
                     @Override
                     public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
-                        Ndate = dataSnapshot.child("date").getValue().toString();
-                        Nbmi= dataSnapshot.child("bmi").getValue().toString();
 
-                        NBMI.setText("Your BMI: "+Nbmi);
-                        NTime.setText("Date: "+Ndate);
+                        if(dataSnapshot.exists()) {
+                            Ndate = dataSnapshot.child("date").getValue().toString();
+                            Nbmi= dataSnapshot.child("bmi").getValue().toString();
+                            NBMI.setText("Your BMI: "+Nbmi);
+                            NTime.setText("Date: "+Ndate);
 
-                        xmi = Double.parseDouble(bmi);
-                        Nxmi = Double.parseDouble(Nbmi);
+                            xmi = Double.parseDouble(bmi);
+                            Nxmi = Double.parseDouble(Nbmi);
 
-                        result = (Nxmi/xmi)*100-100;
-                        String re = Double.toString(result);
-                        compare.setText("BMI change: "+re+"%");
+                            result = (Nxmi/xmi)*100-100;
+                            String re = Double.toString(result);
+                            compare.setText("BMI change: "+re+"%");
+                        }
+                        else{
+                            NBMI.setText("No data");
+                            NTime.setText("No data");
+                        }
+
                     }
 
                     @Override
