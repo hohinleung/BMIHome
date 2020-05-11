@@ -28,11 +28,9 @@ public class BMICalActivity extends AppCompatActivity {
     Button btnLogout,btnBMICal,btnCal,btnUpload,btnMyBMI;
     TextView UserNametxt,Resulttxt,Advicetxt;
     EditText height,weight;
-    FirebaseAuth mfirebase;
     DatabaseReference reff;
     DatabaseReference oldreff;
     DatabaseReference getreff;
-    private FirebaseAuth.AuthStateListener mAuthfirebase;
     Date currentTime = Calendar.getInstance().getTime();
     SimpleDateFormat df = new SimpleDateFormat("dd-MMM-yyyy");
     String formattedDate = df.format(currentTime);

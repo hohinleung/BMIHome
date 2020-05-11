@@ -21,36 +21,44 @@ import com.google.firebase.database.DataSnapshot;
 import com.google.firebase.database.DatabaseError;
 import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
+import com.google.firebase.database.ValueEventListener;
 
+import java.text.SimpleDateFormat;
 import java.util.ArrayList;
 import java.util.Calendar;
 import java.util.Date;
 
 public class MyBMIActivity extends AppCompatActivity {
 
-    Button btnLogout,btnBMICal,btnMyBMI;
-    TextView UserNametxt;
-    FirebaseAuth mfirebase;
-    Date currentTime = Calendar.getInstance().getTime();
-    private DatabaseReference reff;
-    private FirebaseAuth.AuthStateListener mAuthfirebase;
+    Button btnLogout,btnBMICal,btnMyBMI,btnShow;
+    TextView UserNametxt,Newtxt,Oldtxt,Time,BMI,NTime,NBMI,compare;
+    private DatabaseReference reff,newreff;
+    String date,bmi,Ndate,Nbmi;
+    Double xmi,Nxmi,result;
+    FirebaseUser user = FirebaseAuth.getInstance().getCurrentUser();
+    String uid = FirebaseAuth.getInstance().getCurrentUser().getUid();
 
-    private ArrayList<String> arrayList = new ArrayList<>();
-    private ArrayAdapter<String> adapter;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_my_bmi);
 
-        FirebaseUser user = FirebaseAuth.getInstance().getCurrentUser();
-        String uid = FirebaseAuth.getInstance().getCurrentUser().getUid();
         reff = FirebaseDatabase.getInstance().getReference();
+        newreff = FirebaseDatabase.getInstance().getReference();
 
         btnLogout = findViewById(R.id.logout);
         btnBMICal = findViewById(R.id.BMICal);
         UserNametxt = findViewById(R.id.UserNametxt);
         btnMyBMI = findViewById(R.id.MyBMI);
+        Newtxt = findViewById(R.id.Newtxt);
+        Oldtxt = findViewById(R.id.Oldtxt);
+        Time = findViewById(R.id.Time);
+        BMI = findViewById(R.id.BMI);
+        NTime = findViewById(R.id.NTime);
+        NBMI = findViewById(R.id.NBMI);
+        btnShow = findViewById(R.id.show);
+        compare = findViewById(R.id.compare);
 
 
         if (user != null) {
@@ -86,6 +94,55 @@ public class MyBMIActivity extends AppCompatActivity {
             public void onClick(View v) {
                 Intent b = new Intent(MyBMIActivity.this, MyBMIActivity.class);
                 startActivity(b);
+            }
+        });
+
+        btnShow.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+
+                reff = FirebaseDatabase.getInstance().getReference().child("User").child("old:"+uid);
+                reff.addValueEventListener(new ValueEventListener() {
+                    @Override
+                    public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
+                        date = dataSnapshot.child("date").getValue().toString();
+                        bmi= dataSnapshot.child("bmi").getValue().toString();
+
+                        BMI.setText("Your BMI: "+bmi);
+                        Time.setText("Date: "+date);
+
+                    }
+
+                    @Override
+                    public void onCancelled(@NonNull DatabaseError databaseError) {
+
+                    }
+                });
+
+                newreff = FirebaseDatabase.getInstance().getReference().child("User").child("new:"+uid);
+                newreff.addValueEventListener(new ValueEventListener() {
+                    @Override
+                    public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
+                        Ndate = dataSnapshot.child("date").getValue().toString();
+                        Nbmi= dataSnapshot.child("bmi").getValue().toString();
+
+                        NBMI.setText("Your BMI: "+Nbmi);
+                        NTime.setText("Date: "+Ndate);
+
+                        xmi = Double.parseDouble(bmi);
+                        Nxmi = Double.parseDouble(Nbmi);
+
+                        result = (Nxmi/xmi)*100-100;
+                        String re = Double.toString(result);
+                        compare.setText("BMI change: "+re+"%");
+                    }
+
+                    @Override
+                    public void onCancelled(@NonNull DatabaseError databaseError) {
+
+                    }
+                });
+
             }
         });
 

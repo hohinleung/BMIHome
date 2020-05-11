@@ -61,4 +61,75 @@
         android:layout_marginEnd="10dp"
         android:text="MY BMI" />
 
+    <TextView
+        android:id="@+id/Newtxt"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_centerInParent="true"
+        android:text="Latest BMI"
+        android:textSize="24sp" />
+
+    <TextView
+        android:id="@+id/BMI"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_centerInParent="true"
+        android:layout_below="@+id/Newtxt"
+        android:text=""
+        android:textSize="18sp" />
+
+    <TextView
+        android:id="@+id/Time"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_centerInParent="true"
+        android:layout_below="@+id/BMI"
+        android:text=""
+        android:textSize="18sp" />
+
+    <TextView
+        android:id="@+id/Oldtxt"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_centerInParent="true"
+        android:layout_below="@+id/Time"
+        android:paddingTop="20dp"
+        android:textSize="24sp"
+        android:text="LastTime BMI" />
+
+    <TextView
+        android:id="@+id/NBMI"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_centerInParent="true"
+        android:layout_below="@+id/Oldtxt"
+        android:text=""
+        android:textSize="18sp" />
+
+    <TextView
+        android:id="@+id/NTime"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_centerInParent="true"
+        android:layout_below="@+id/NBMI"
+        android:text=""
+        android:textSize="18sp" />
+
+    <Button
+        android:id="@+id/show"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:layout_centerHorizontal="true"
+        android:text="Show" />
+
+    <TextView
+        android:id="@+id/compare"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_centerInParent="true"
+        android:layout_below="@+id/NTime"
+        android:textSize="18sp"
+        android:text="" />
+
 </RelativeLayout>
