@@ -36,7 +36,6 @@ public class HomeActivity extends AppCompatActivity {
             Toast.makeText(HomeActivity.this, "Welcome", Toast.LENGTH_SHORT).show();
             for (UserInfo profile : user.getProviderData()) {
                 String email = profile.getEmail();
-                UserNametxt.setText("Welcome!"+ email);
             }
         } else {
             Toast.makeText(HomeActivity.this, "You need to login again", Toast.LENGTH_SHORT).show();

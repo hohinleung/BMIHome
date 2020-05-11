@@ -26,7 +26,7 @@
         android:id="@+id/UserNametxt"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="Your BMI"
+        android:text="@string/yourbmist"
         android:textAlignment="center"
         android:background="@color/yellow"
         android:textSize="30sp"
@@ -40,7 +40,7 @@
         android:layout_height="wrap_content"
         android:layout_marginStart="310dp"
         android:layout_marginEnd="10dp"
-        android:text="logout"
+        android:text="@string/logoutst"
         android:layout_below="@+id/UserNametxt"/>
 
     <Button
@@ -50,7 +50,7 @@
         android:layout_below="@+id/UserNametxt"
         android:layout_marginStart="210dp"
         android:layout_marginEnd="10dp"
-        android:text="BMICal" />
+        android:text="@string/bmicalst" />
 
     <Button
         android:id="@+id/MyBMI"
@@ -59,14 +59,14 @@
         android:layout_below="@+id/UserNametxt"
         android:layout_marginStart="110dp"
         android:layout_marginEnd="10dp"
-        android:text="MY BMI" />
+        android:text="@string/mybmist" />
 
     <TextView
         android:id="@+id/Newtxt"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_centerInParent="true"
-        android:text="Latest BMI"
+        android:text="@string/latestbmist"
         android:textSize="24sp" />
 
     <TextView
@@ -95,7 +95,7 @@
         android:layout_below="@+id/Time"
         android:paddingTop="20dp"
         android:textSize="24sp"
-        android:text="LastTime BMI" />
+        android:text="@string/lasttimebmist" />
 
     <TextView
         android:id="@+id/NBMI"
@@ -121,7 +121,7 @@
         android:layout_height="wrap_content"
         android:layout_alignParentBottom="true"
         android:layout_centerHorizontal="true"
-        android:text="Show" />
+        android:text="@string/showst" />
 
     <TextView
         android:id="@+id/compare"

@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">BMIHome</string>
+    <string name="Weightst">身高（cm）</string>
+    <string name="alreadyst">已經有帳號？立即登入！</string>
+    <string name="bmicalst">BMI計算</string>
+    <string name="emailst">電子郵件</string>
+    <string name="heightst">身高（cm）</string>
+    <string name="lasttimebmist">上次的BMI</string>
+    <string name="latestbmist">最新的BMI</string>
+    <string name="loginst">登入</string>
+    <string name="logoutst">登出</string>
+    <string name="mybmist">我的BMI</string>
+    <string name="noaccountst">沒帳號？立即注冊！</string>
+    <string name="passwordst">密碼</string>
+    <string name="resultst">結果</string>
+    <string name="showst">顯示</string>
+    <string name="signupst">注冊</string>
+    <string name="uploadst">上載你的BMI</string>
+    <string name="welcomebmist">歡迎來到BMI程式</string>
+    <string name="welcomesignupst">歡迎注冊</string>
+    <string name="welcomest">歡迎！</string>
+    <string name="yourbmist">你的BMI</string>
+</resources>

@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">BMIHome</string>
+    <string name="bmicalst">BMI CAL</string>
+    <string name="alreadyst">Already have an account?Sign in now!</string>
+    <string name="Weightst">Weight(kg)</string>
+    <string name="emailst">email</string>
+    <string name="heightst">height(cm)</string>
+    <string name="lasttimebmist">Last Time BMI</string>
+    <string name="latestbmist">Latest BMI</string>
+    <string name="loginst">LOGIN</string>
+    <string name="logoutst">Logout</string>
+    <string name="mybmist">MY BMI</string>
+    <string name="noaccountst">No account?Sign up now!</string>
+    <string name="passwordst">password</string>
+    <string name="resultst">Result</string>
+    <string name="showst">show</string>
+    <string name="signupst">SIGN UP</string>
+    <string name="uploadst">Upload Your BMI</string>
+    <string name="welcomebmist">Welcome to BMI Application</string>
+    <string name="welcomesignupst">Good to sign up!</string>
+    <string name="welcomest">Welcome!</string>
+    <string name="yourbmist">Your BMI</string>
+</resources>

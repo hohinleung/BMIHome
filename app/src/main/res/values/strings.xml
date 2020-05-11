@@ -1,3 +1,29 @@
 <resources>
     <string name="app_name">BMIHome</string>
+    //usual and button
+    <string name="emailst">email</string>
+    <string name="passwordst">password</string>
+    <string name="mybmist">MY BMI</string>
+    <string name="bmicalst">BMI CAL</string>
+    <string name="logoutst">Logout</string>
+    //main
+    <string name="welcomebmist">Welcome to BMI Application</string>
+    <string name="loginst">LOGIN</string>
+    <string name="noaccountst">No account?Sign up now!</string>
+    //sign up
+    <string name="welcomesignupst">Good to sign up!</string>
+    <string name="signupst">SIGN UP</string>
+    <string name="alreadyst">Already have an account?Sign in now!</string>
+    //home
+    <string name="welcomest">Welcome!</string>
+    //cal
+    <string name="heightst">height(cm)</string>
+    <string name="Weightst">Weight(kg)</string>
+    <string name="resultst">Result</string>
+    <string name="uploadst">Upload Your BMI</string>
+    //mybmi
+    <string name="yourbmist">Your BMI</string>
+    <string name="latestbmist">Latest BMI</string>
+    <string name="lasttimebmist">Last Time BMI</string>
+    <string name="showst">show</string>
 </resources>
