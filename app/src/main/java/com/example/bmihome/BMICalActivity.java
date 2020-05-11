@@ -155,7 +155,7 @@ public class BMICalActivity extends AppCompatActivity {
                             email = dataSnapshot.child("email").getValue().toString();
                             bmi = dataSnapshot.child("bmi").getValue().toString();
                             xmi = Double.parseDouble(bmi);
-                        }
+                        }//checking
 
                     }
                     @Override
